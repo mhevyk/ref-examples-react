@@ -1,0 +1,20 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.list .item {
+  height: 100px;
+  background-color: plum;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.list .item.skeleton {
+  background-color: lightgray;
+  color: gray;
+}
