@@ -18,30 +18,33 @@ export default function FormControlled() {
   console.log("Render");
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Email:
+    <>
+      <h1>Controlled form</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Email:
+          <br />
+          <input
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </label>
         <br />
-        <input
-          type="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-      </label>
-      <br />
-      <br />
-      <label>
-        Password:
         <br />
-        <input
-          type="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-      </label>
-      <br />
-      <br />
-      <button>Submit</button>
-    </form>
+        <label>
+          Password:
+          <br />
+          <input
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </label>
+        <br />
+        <br />
+        <button>Submit</button>
+      </form>
+    </>
   );
 }

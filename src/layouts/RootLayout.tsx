@@ -14,7 +14,9 @@ export default function UseCallbackAsRefLayout() {
           <Link to="uncontrolled-form">Form (uncontrolled)</Link>
         </li>
         <li>
-          <Link to="">Problem (dynamic elements with useRef)</Link>
+          <Link to="dynamic-ref-page">
+            Problem (dynamic elements with useRef)
+          </Link>
         </li>
         <li>
           <Link to="dynamic-input-height">Example 1 (input height)</Link>

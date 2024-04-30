@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { Item } from "../utils/fetchDummyApi";
-import usePaginatedAxiosQuery from "../hooks/usePaginatedAxiosQuery";
+import useInfiniteAxiosQuery from "../hooks/useInfiniteAxiosQuery";
 
 const LIMIT = 10;
 
@@ -13,7 +13,7 @@ function SkeletonItems() {
 }
 
 export default function InfiniteScrollingPage() {
-  const { items, isLoading, fetchNextPage } = usePaginatedAxiosQuery<Item>({
+  const { items, isLoading, fetchNextPage } = useInfiniteAxiosQuery<Item>({
     url: "/items",
     fetchOnMount: true,
     initialPage: 1,

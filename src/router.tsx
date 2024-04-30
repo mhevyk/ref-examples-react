@@ -1,4 +1,4 @@
-import { RouteObject } from "react-router-dom";
+import { Navigate, RouteObject } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import UseCallbackAsRefLayout from "./layouts/RootLayout";
@@ -20,6 +20,10 @@ const router: RouteObject[] = [
         children: [
           {
             index: true,
+            element: <Navigate to="ref-vs-variable" />,
+          },
+          {
+            path: "dynamic-ref-page",
             element: <DynamicInputHeightUsingSimpleRefPage />,
           },
           {

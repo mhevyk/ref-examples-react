@@ -8,9 +8,7 @@ type UseInfiniteItems = Omit<AxiosRequestConfig, "signal"> & {
   limit?: number;
 };
 
-export default function usePaginatedAxiosQuery<Ttem>(
-  options: UseInfiniteItems
-) {
+export default function useInfiniteAxiosQuery<Ttem>(options: UseInfiniteItems) {
   const [items, setItems] = useState<Ttem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);

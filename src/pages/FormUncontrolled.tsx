@@ -18,22 +18,25 @@ export default function FormUncontrolled() {
   console.log("Render");
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Email:
+    <>
+      <h1>Uncontrolled form</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Email:
+          <br />
+          <input type="email" ref={emailRef} />
+        </label>
         <br />
-        <input type="email" ref={emailRef} />
-      </label>
-      <br />
-      <br />
-      <label>
-        Password:
         <br />
-        <input type="password" ref={passwordRef} />
-      </label>
-      <br />
-      <br />
-      <button>Submit</button>
-    </form>
+        <label>
+          Password:
+          <br />
+          <input type="password" ref={passwordRef} />
+        </label>
+        <br />
+        <br />
+        <button>Submit</button>
+      </form>
+    </>
   );
 }
