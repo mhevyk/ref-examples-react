@@ -20,7 +20,7 @@ export default function InfiniteScrollingPage() {
     limit: LIMIT,
   });
 
-  const lastItemRef = useCallback((item: HTMLDivElement) => {
+  const lastItemRef = useCallback((item: HTMLDivElement | null) => {
     if (item == null) {
       return;
     }

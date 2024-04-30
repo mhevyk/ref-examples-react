@@ -4,9 +4,9 @@ export default function DynamicInputHeightPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [height, setHeight] = useState(0);
 
-  const inputRef = useCallback((input: HTMLInputElement) => {
+  const inputRef = useCallback((input: HTMLInputElement | null) => {
     if (input === null) {
-      console.log("component unmounts");
+      console.log("component unmounts here");
       setHeight(0);
       return;
     }

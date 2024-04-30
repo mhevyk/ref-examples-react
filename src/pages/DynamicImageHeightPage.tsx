@@ -5,17 +5,20 @@ export default function DynamicImageHeightPage() {
   const [count, setCount] = useState(1);
   const [catImageHeight, setCatImageHeight] = useState(0);
 
-  const measuredRef = useCallback((image: HTMLImageElement) => {
-    function handleLoad() {
-      setCatImageHeight(image.getBoundingClientRect().height);
-      image.removeEventListener("load", handleLoad);
+  const measuredRef = useCallback((image: HTMLImageElement | null) => {
+    if (image === null) {
+      setCatImageHeight(0);
+      return;
     }
 
-    if (image !== null) {
-      image.addEventListener("load", handleLoad);
-    } else {
-      setCatImageHeight(0);
+    function handleLoad() {
+      if (image) {
+        setCatImageHeight(image.getBoundingClientRect().height);
+        image.removeEventListener("load", handleLoad);
+      }
     }
+
+    image.addEventListener("load", handleLoad);
   }, []);
 
   const shouldShowImageOfCat = count % 3 === 0;
@@ -28,11 +31,7 @@ export default function DynamicImageHeightPage() {
       <button onClick={() => setCount((c) => c + 1)}>Next render</button>
       <br />
       {shouldShowImageOfCat && (
-        <img
-          ref={measuredRef}
-          src={catImageUrl}
-          alt="cat"
-        />
+        <img ref={measuredRef} src={catImageUrl} alt="cat" />
       )}
     </div>
   );

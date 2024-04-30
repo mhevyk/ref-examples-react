@@ -6,6 +6,9 @@ import DynamicInputHeightPage from "./pages/DynamicInputHeightPage";
 import DynamicInputHeightUsingSimpleRefPage from "./pages/DynamicInputHeightUsingSimpleRefPage";
 import DynamicImageHeightPage from "./pages/DynamicImageHeightPage";
 import InfiniteScrollingPage from "./pages/InfiniteScrollingPage";
+import RefVsSimpleVariable from "./pages/RefVsSimpleVariable";
+import UncontrolledForm from "./pages/FormUncontrolled";
+import FormControlled from "./pages/FormControlled";
 
 const router: RouteObject[] = [
   {
@@ -30,6 +33,18 @@ const router: RouteObject[] = [
           {
             path: "infinite-scrolling",
             element: <InfiniteScrollingPage />,
+          },
+          {
+            path: "ref-vs-variable",
+            element: <RefVsSimpleVariable />,
+          },
+          {
+            path: "controlled-form",
+            element: <FormControlled />,
+          },
+          {
+            path: "uncontrolled-form",
+            element: <UncontrolledForm />,
           },
         ],
       },
